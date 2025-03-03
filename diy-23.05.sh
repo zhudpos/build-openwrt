@@ -235,13 +235,17 @@ destination_dir="package/A"
 color cy "添加&替换插件"
 
 # 添加额外插件
+#dns转发
+#luci-app-adguardhome
 clone_dir openwrt-23.05 https://github.com/coolsnowwolf/luci luci-app-adguardhome
-git_clone https://github.com/immortalwrt/homeproxy luci-app-homeproxy
-clone_all https://github.com/morytyann/OpenWrt-mihomo
-
-clone_all https://github.com/sbwml/luci-app-alist
+#mosdns
 clone_all https://github.com/sbwml/luci-app-mosdns
 git_clone https://github.com/sbwml/packages_lang_golang golang
+#smasrtdns
+git_clone master https://github.com/pymumu/luci-app-smartdns
+git_clone https://github.com/pymumu/openwrt-smartdns smartdns
+
+clone_all https://github.com/sbwml/luci-app-alist
 
 clone_all https://github.com/linkease/istore-ui
 clone_all https://github.com/linkease/istore luci
@@ -255,6 +259,9 @@ clone_all https://github.com/xiaorouji/openwrt-passwall-packages
 clone_all https://github.com/xiaorouji/openwrt-passwall
 clone_all https://github.com/xiaorouji/openwrt-passwall2
 clone_dir https://github.com/vernesong/OpenClash luci-app-openclash
+clone_all https://github.com/Thaolga/luci-app-nekoclash
+clone_all https://github.com/nikkinikki-org/OpenWrt-nikki
+git_clone https://github.com/immortalwrt/homeproxy luci-app-homeproxy
 
 # Themes
 git_clone https://github.com/kiddin9/luci-theme-edge
@@ -291,7 +298,7 @@ sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.
 sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.::0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # 更改 Argon 主题背景
-cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+#cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 # 取消主题默认设置
 # find $destination_dir/luci-theme-*/ -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
