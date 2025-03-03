@@ -238,15 +238,19 @@ destination_dir="package/A"
 color cy "添加&替换插件"
 
 # 添加额外插件
+#dns转发
+#adguardhome
 git_clone https://github.com/kongfl888/luci-app-adguardhome
+#mosdns1
+clone_all v5-lua https://github.com/sbwml/luci-app-mosdns
+git_clone https://github.com/sbwml/packages_lang_golang golang
+#smartdns
+git_clone lede https://github.com/pymumu/luci-app-smartdns
+git_clone https://github.com/pymumu/openwrt-smartdns smartdns
+
 clone_all https://github.com/sirpdboy/luci-app-ddns-go
 
 clone_all lua https://github.com/sbwml/luci-app-alist
-clone_all v5-lua https://github.com/sbwml/luci-app-mosdns
-git_clone https://github.com/sbwml/packages_lang_golang golang
-
-git_clone lede https://github.com/pymumu/luci-app-smartdns
-git_clone https://github.com/pymumu/openwrt-smartdns smartdns
 
 git_clone https://github.com/ximiTech/luci-app-msd_lite
 git_clone https://github.com/ximiTech/msd_lite
