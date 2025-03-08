@@ -73,7 +73,7 @@ jobs:
 #      fail-fast: false
 #      matrix:
 #        target: [x86-64]
-#        branch: [18.06, 23.05, 24.10]
+#        branch: [18.06, 23.05, main]
 
     env:
 #      TARGET_DEVICE: ${{ github.event.inputs.target }}
