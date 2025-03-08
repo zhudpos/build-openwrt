@@ -11,7 +11,7 @@ on:
         required: true
         default: '18.06'
         type: choice
-        options: [18.06, 23.05]
+        options: [18.06, 23.05, 24.10]
 
       target:
         description: '选择要编译的机型'
@@ -23,7 +23,7 @@ on:
       ip:
         description: '设置默认登录IP'
         required: false
-        default: '192.168.30.1'
+        default: '10.0.0.1'
 
       partsize:
         description: '设置rootfs大小'
@@ -73,7 +73,7 @@ jobs:
 #      fail-fast: false
 #      matrix:
 #        target: [x86-64]
-#        branch: [18.06, 23.05]
+#        branch: [18.06, 23.05, 24.10]
 
     env:
 #      TARGET_DEVICE: ${{ github.event.inputs.target }}
