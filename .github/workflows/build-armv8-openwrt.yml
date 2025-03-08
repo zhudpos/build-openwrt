@@ -11,7 +11,7 @@ on:
         required: true
         default: '18.06'
         type: choice
-        options: [18.06, 23.05, 24.10]
+        options: [18.06, 23.05, main]
 
       ip:
         description: '设置默认登录IP'
@@ -61,7 +61,7 @@ jobs:
 #      fail-fast: false
 #      matrix:
 #        target: [armv8]
-#        branch: [18.06, 23.05, 24.10]
+#        branch: [18.06, 23.05, main]
 
     env:
       DEFAULT_IP: ${{ github.event.inputs.ip }}
