@@ -11,12 +11,12 @@ on:
         required: true
         default: '18.06'
         type: choice
-        options: [18.06, 23.05]
+        options: [18.06, 23.05, 24.10]
 
       ip:
         description: '设置默认登录IP'
         required: false
-        default: '192.168.1.2'
+        default: '10.0.0.1'
 
 #      free_disk:
 #        description: '清理释放磁盘空间'
@@ -61,7 +61,7 @@ jobs:
 #      fail-fast: false
 #      matrix:
 #        target: [armv8]
-#        branch: [18.06, 23.05]
+#        branch: [18.06, 23.05, 24.10]
 
     env:
       DEFAULT_IP: ${{ github.event.inputs.ip }}
