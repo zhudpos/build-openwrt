@@ -235,9 +235,6 @@ destination_dir="package/A"
 color cy "添加&替换插件"
 
 # 添加额外插件
-#dns转发
-#luci-app-adguardhome
-clone_dir openwrt-24.10 https://github.com/coolsnowwolf/luci luci-app-adguardhome
 #mosdns
 clone_all https://github.com/sbwml/luci-app-mosdns
 git_clone https://github.com/sbwml/packages_lang_golang golang
@@ -343,14 +340,6 @@ status "加载个人设置"
     chmod +x $GITHUB_WORKSPACE/scripts/preset-terminal-tools.sh
     $GITHUB_WORKSPACE/scripts/preset-terminal-tools.sh
     status "下载zsh终端工具"
-}
-
-# 开始下载adguardhome运行内核
-[ $CLASH_KERNEL ] && {
-    begin_time=$(date '+%H:%M:%S')
-    chmod +x $GITHUB_WORKSPACE/scripts/preset-adguard-core.sh
-    $GITHUB_WORKSPACE/scripts/preset-adguard-core.sh $CLASH_KERNEL
-    status "下载adguardhome运行内核"
 }
 
 # 开始更新配置文件
